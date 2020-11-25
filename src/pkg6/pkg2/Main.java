@@ -44,8 +44,12 @@ public class Main {
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            
+            ex.printStackTrace();
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            
+            ex.printStackTrace();
         }
         
         Scanner scanner = new Scanner(System.in);
@@ -65,11 +69,11 @@ public class Main {
                 break;
                     
                 case "double":
-                    
+                    find(stringBuffer.toString(),"[0-9]+[\\.,]{1}[0-9]+");
                 break;
                 
                 case "string":
-                    find(stringBuffer.toString(),"[a-zA-Z]+");
+                    find(stringBuffer.toString(),"[\\w]+");
                     
                 break;             
                 
@@ -78,9 +82,6 @@ public class Main {
             
         }
         while(!type.equals("exit"));
-        
-        
-        
         
         
         
